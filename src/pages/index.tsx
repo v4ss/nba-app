@@ -8,11 +8,6 @@ import Profile from "@/components/Profile";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const player = {
-  name: "LeBronJames",
-  //avatarUrl: "https://i.imgur.com/2hBebTU.jpeg"
-};
-
 export default function Home() {
     const [isConnected, setIsConnected] = useState(false);
     function handleOnClick() {
@@ -30,8 +25,6 @@ export default function Home() {
       <main>
           <Container maxWidth="lg">
             <h1>Bienvenue dans My NBA</h1>
-            <Profile player={player} isConnected={isConnected}/>
-            <MyButton isConnected={isConnected} handleOnClick={handleOnClick}/>
           </Container>
       </main>
     </>

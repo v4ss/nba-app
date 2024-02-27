@@ -1,8 +1,8 @@
-# NBA App
+# My NBA App
 
-## Setting up
+## Setup
 
-Install graphic dependencies :
+Install graphic package :
 
 ```bash
 npm install @mui/material @emotion/react @emotion/styled

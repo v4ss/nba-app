@@ -1,12 +1,16 @@
+import { UserContext } from "@/context/userContext";
 import { Box } from "@mui/material";
 import  Image  from "next/image";
+import { useContext } from "react";
 
-export default function Profile({player, isConnected}) {
+export default function Profile() {
+    const user = useContext(UserContext);
+    
     return (
         <Box>
-            {isConnected && (
+            {user.isConnected && (
                 <>
-                    <p>Nom du joueur : {player.name}</p>
+                    <p>Nom du joueur : {user.username}</p>
                     {/* <Image
                         src={player.avatarUrl}
                         alt={"Avatar Player"}

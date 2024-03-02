@@ -1,7 +1,8 @@
 import type { AppProps } from "next/app";
 import { UserContext, UserDispatchContext } from "@/context/userContext";
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import userReducer from "@/reducer/userReducer";
+import Router from "next/router";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [user, dispatch] = useReducer(userReducer, {
@@ -10,6 +11,9 @@ export default function App({ Component, pageProps }: AppProps) {
     avatarUrl: null,
   });
 
+  useEffect(() => {
+    if(!user.isConnected) Router.push("/login");
+  }, [user.isConnected]);
 
   return (
   <UserContext.Provider value={user}>
